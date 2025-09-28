@@ -40,18 +40,6 @@ inputUpload.addEventListener("change", async (evento) => {
 const inputTags = document.getElementById("input-tags");
 const listaTags = document.getElementById("lista-tags");
 
-inputTags.addEventListener("keypress", (evento) => {
-  if (evento.key === "Enter") {
-    evento.preventDefault();
-    const tagTexto = inputTags.value.trim();
-    if (inputTags !== "") {
-      const tagNova = document.createElement("li");
-      tagNova.innerHTML = `<p>${tagTexto}</p> <img src="./img/close-black.svg" class="remove-tag">`
-      listaTags.appendChild(tagNova);
-      inputTags.value = "";
-    }
-  }
-})
 
 listaTags.addEventListener("click", (evento) => {
   if (evento.target.classList.contains("remove-tag")) {
@@ -60,7 +48,7 @@ listaTags.addEventListener("click", (evento) => {
   }
 })
 
-const tagsDisponiveis = ["Front-end", "Programação", "Data Science", "Full-stack", "HTML", "CSS", "Javascript"];
+const tagsDisponiveis = ["Front-end", "Programação", "Data Science", "Full-stack", "HTML", "CSS", "Javascript", "Back-end"];
 
 async function verificaTagsDisponiveis(tagTexto){
   return new Promise((resolve) => {
@@ -69,3 +57,36 @@ async function verificaTagsDisponiveis(tagTexto){
     }, 1000)
   })
 }
+
+inputTags.addEventListener("keypress", async (evento) => {
+  if (evento.key === "Enter") {
+    evento.preventDefault();
+    const tagTexto = inputTags.value.trim();
+    if (inputTags !== "") {
+      try {
+        const tagExiste = await  verificaTagsDisponiveis(tagTexto);
+        if (tagExiste) {
+          const tagNova = document.createElement("li");
+          tagNova.innerHTML = `<p>${tagTexto}</p> <img src="./img/close-black.svg" class="remove-tag">`
+          listaTags.appendChild(tagNova);
+          inputTags.value = "";
+        } else {
+          alert("Tag não foi encontrada.")
+        }
+      } catch (error) {
+        console.error("Erro ao verificar a existência da tag.")
+        alert("Erro ao verificar a existência da tag. Verifique o console.")
+      }
+    }
+  }
+})
+
+const botaoPublicar = document.querySelector(".botao-publicar");
+
+botaoPublicar.addEventListener("click", async (evento) => {
+  evento.preventDefault();
+
+  const nomeDoProjeto = document.getElementById("nome");
+  const descricaoDoProjeto = document.getElementById("descricao");
+  const tagsProjeto = Array.from("")
+})
