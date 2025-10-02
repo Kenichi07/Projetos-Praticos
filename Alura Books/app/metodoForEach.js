@@ -1,6 +1,7 @@
 const elementoParaInserirLivros = document.getElementById('livros')
 
 function exibirLivros (listaLivros) {
+  elementoParaInserirLivros.innerHTML = ''
   listaLivros.forEach(livro => {
     elementoParaInserirLivros.innerHTML += `<div class="livro">
     <img class="livro__imagens" src="${livro.imagem}" alt="${livro.alt}" />
