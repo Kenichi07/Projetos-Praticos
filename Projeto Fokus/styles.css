@@ -5,6 +5,9 @@
   --fundo-card-timer: rgba(20, 68, 128, 0.3);
   --lils: #b872ff;
   --linear-botes: linear-gradient(180deg, #b872ff 0%, #144480 100%);
+  --azul-profundo: #01080e;
+  --fundo-card: rgba(255, 255, 255, 0.5);
+  --fundo-card-concludo: rgba(0, 244, 191, 0.4);
 }
 
 [data-contexto="foco"] {
@@ -271,7 +274,7 @@ h6 {
   text-align: right;
   border-radius: 0.8rem;
   border: 0.2rem solid var(--azul-royal, #144480);
-  background: var(--fundo-modal-2, #1B293B);
+  background: var(--fundo-modal-2, #1b293b);
 }
 
 .app__section-task-header__li {
@@ -307,7 +310,7 @@ h6 {
 .app__section-task-content {
   width: 59rem;
   max-width: 90%;
-  color: #FFF;
+  color: #fff;
 }
 
 .app__section-active-task {
@@ -403,11 +406,11 @@ h6 {
 }
 
 .app__section-task-list-item-active.app__section-task-list-item {
-  border: 2px solid #FFF;
+  border: 2px solid #fff;
 }
 
 .app__section-task-list-item-complete .app__section-task-icon-status circle {
-  fill: #00F4BF;
+  fill: #00f4bf;
 }
 
 .app__form-add-task {
@@ -417,7 +420,7 @@ h6 {
   font-size: 1.8rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 150%; 
+  line-height: 150%;
   font-family: Montserrat;
 }
 
@@ -436,7 +439,7 @@ h6 {
   width: 100%;
   border-radius: 0.8rem;
   padding: 0.8rem;
-  background: #98A0A8;
+  background: #98a0a8;
 }
 
 .app__form-footer {
@@ -511,18 +514,18 @@ h6 {
 /* Para Celulares */
 @media (max-width: 767px) {
   .app__section-banner-container {
-      width: 32rem;
+    width: 32rem;
   }
 
   .app__title {
-      font-size: 2.6rem;
+    font-size: 2.6rem;
   }
 
   .app__card-timer {
-      font-size: 6rem;
+    font-size: 6rem;
   }
 
   .app__section-active-task {
-      gap: 2rem;
+    gap: 2rem;
   }
 }
