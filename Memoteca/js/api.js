@@ -5,6 +5,7 @@ const api = {
       return response.json();
     } catch (error) {
       alert("Erro ao buscar pensamentos");
+      throw error;
     }
   },
 };
