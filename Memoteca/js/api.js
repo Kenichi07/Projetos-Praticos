@@ -23,6 +23,15 @@ const api = {
       throw error;
     }
   },
+  async buscarPensamentoPorId(id) {
+    try {
+      const response = await fetch(`http://localhost:3000/pensamentos/${id}`);
+      return response.json();
+    } catch (error) {
+      alert("Erro ao buscar pensamentos");
+      throw error;
+    }
+  },
 };
 
 export default api;
