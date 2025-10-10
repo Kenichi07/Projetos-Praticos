@@ -10,7 +10,6 @@ const api = {
       throw error;
     }
   },
-
   async salvarPensamento(pensamento) {
     try {
       const response = await axios.post(`${URL_BASE}/pensamentos`, pensamento);
@@ -20,7 +19,6 @@ const api = {
       throw error;
     }
   },
-
   async buscarPensamentoPorId(id) {
     try {
       const response = await axios.get(`${URL_BASE}/pensamentos/${id}`);
@@ -30,7 +28,6 @@ const api = {
       throw error;
     }
   },
-
   async editarPensamento(pensamento) {
     try {
       const response = await axios.put(
@@ -43,7 +40,6 @@ const api = {
       throw error;
     }
   },
-
   async excluirPensamento(id) {
     try {
       const response = await axios.delete(`${URL_BASE}/pensamentos/${id}`);
@@ -66,6 +62,17 @@ const api = {
       return pensamentosFiltrados;
     } catch (error) {
       alert("Erro ao filtrar pensamentos");
+      throw error;
+    }
+  },
+  async atualizarFavorito(id, favorito) {
+    try {
+      const response = await axios.patch(`${URL_BASE}/pensamentos/${id}`, {
+        favorito,
+      });
+      return response.data;
+    } catch (error) {
+      alert("Erro ao atualizar favorito");
       throw error;
     }
   },

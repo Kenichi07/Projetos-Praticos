@@ -2,19 +2,19 @@
   "pensamentos": [
     {
       "id": "2a56",
-      "favorito": false,
+      "favorito": true,
       "conteudo": "Vc faz TI? Conserta meu celular!",
       "autoria": "Grupo da família"
     },
     {
       "id": "4c7d",
-      "favorito": false,
+      "favorito": true,
       "conteudo": "Da vida reclama, mas sem ela não vive!",
       "autoria": "Mestre Yoda"
     },
     {
       "id": "68uy",
-      "favorito": false,
+      "favorito": true,
       "conteudo": "Esse é de laranja que parece de limão, mas tem gosto de tamarindo!",
       "autoria": "Chaves"
     },
