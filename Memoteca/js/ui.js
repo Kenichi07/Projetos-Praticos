@@ -6,6 +6,8 @@ const ui = {
     document.getElementById("pensamento-id").value = pensamento.id;
     document.getElementById("pensamento-conteudo").value = pensamento.conteudo;
     document.getElementById("pensamento-autoria").value = pensamento.autoria;
+    document.getElementById("pensamento-data").value = pensamento.data.toISOString().split("T")[0];
+    document.getElementById("form-container").scrollIntoView()
   },
 
   limparFormulario() {
@@ -56,6 +58,19 @@ const ui = {
     pensamentoAutoria.textContent = pensamento.autoria;
     pensamentoAutoria.classList.add("pensamento-autoria");
 
+    const pensamentoData = document.createElement("div");
+
+    var options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      timeZone: "UTC",
+    };
+    const dataFormatada = pensamento.data.toLocaleDateString("pt-BR", options);
+    pensamentoData.textContent = dataFormatada;
+    pensamentoData.classList.add("pensamento-data");
+
     const botaoEditar = document.createElement("button");
     botaoEditar.classList.add("botao-editar");
     botaoEditar.onclick = () => ui.preencherFormulario(pensamento.id);
@@ -85,12 +100,12 @@ const ui = {
     botaoFavorito.classList.add("botao-favorito");
     botaoFavorito.onclick = async () => {
       try {
-        await api.atualizarFavorito(pensamento.id, !pensamento.favorito)
-        ui.renderizarPensamentos()
+        await api.atualizarFavorito(pensamento.id, !pensamento.favorito);
+        ui.renderizarPensamentos();
       } catch (error) {
-        alert("Erro ao atualizar pensamento")
+        alert("Erro ao atualizar pensamento");
       }
-    }
+    };
 
     const iconeFavorito = document.createElement("img");
     iconeFavorito.src = pensamento.favorito
@@ -108,6 +123,7 @@ const ui = {
     li.appendChild(iconeAspas);
     li.appendChild(pensamentoConteudo);
     li.appendChild(pensamentoAutoria);
+    li.appendChild(pensamentoData);
     li.appendChild(icones);
     listaPensamentos.appendChild(li);
   },

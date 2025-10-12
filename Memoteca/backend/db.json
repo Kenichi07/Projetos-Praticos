@@ -16,10 +16,9 @@
     },
     {
       "id": "68uy",
-      "favorito": true,
       "conteudo": "Esse é de laranja que parece de limão, mas tem gosto de tamarindo!",
       "autoria": "Chaves",
-      "data": "2024-08-21T00:00:00.000Z"
+      "data": "2025-10-11"
     },
     {
       "id": "b807",
@@ -83,19 +82,6 @@
       "conteudo": "Na minha máquina funciona!",
       "autoria": "Dev",
       "data": "2024-08-01T00:00:00.000Z"
-    },
-    {
-      "id": "9199",
-      "favorito": false,
-      "conteudo": "Teste 1",
-      "autoria": "Dev",
-      "data": "2024-08-02T00:00:00.000Z"
-    },
-    {
-      "id": "e943",
-      "conteudo": "Testando formato de data",
-      "autoria": "Dev",
-      "data": "2025-10-10"
     }
   ]
 }
