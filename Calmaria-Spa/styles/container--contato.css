@@ -96,6 +96,13 @@
   padding: 2rem;
 }
 
+.container__contato
+  .container__contato--form
+  .container__contato--inputs
+  fieldset {
+  border: none;
+}
+
 .container__contato .container__contato--form button {
   height: 4.8rem;
   border: none;
