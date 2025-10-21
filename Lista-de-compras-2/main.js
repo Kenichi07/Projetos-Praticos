@@ -70,4 +70,15 @@ function mostrarItem() {
       mostrarItem();
     });
   });
+
+  const deletarObjetos = document.querySelectorAll(".deletar");
+
+  deletarObjetos.forEach((i) => {
+    i.addEventListener("click", (e) => {
+      const valorDoElemento =
+        e.target.parentElement.parentElement.getAttribute("data-value");
+      listaDeItens.splice(valorDoElemento, 1);
+      mostrarItem();
+    });
+  });
 }
