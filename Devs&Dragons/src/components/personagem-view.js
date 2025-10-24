@@ -1,4 +1,4 @@
-export class personagemView {
+export class PersonagemView {
   personagens;
 
   constructor(personagens) {
