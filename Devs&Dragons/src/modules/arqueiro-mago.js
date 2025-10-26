@@ -10,17 +10,15 @@ export class ArqueiroMago extends Personagem {
 
   constructor(
     nome,
-    level,
     destreza,
     elementoMagico,
     levelMagico,
     inteligencia
   ) {
-    super(nome, level);
-    this.ladoArqueiro = new Arqueiro(nome, level, destreza);
+    super(nome);
+    this.ladoArqueiro = new Arqueiro(nome, destreza);
     this.ladoMago = new Mago(
       nome,
-      level,
       elementoMagico,
       levelMagico,
       inteligencia
